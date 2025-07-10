@@ -1,0 +1,20 @@
+
+.Nav-bar{
+    background-color: rgb(117, 209, 249) !important;
+    color :antiquewhite !important;
+}
+.active{
+    color:rgb(250, 250, 250);
+    padding-bottom: .1rem;
+    
+}
+
+.nav-link-custom {
+  color: white;
+  text-decoration:none;
+}
+
+.nav-link-custom:hover {
+  color: #f5efef; /* Optional: lighter color on hover */
+  text-decoration: none;
+}

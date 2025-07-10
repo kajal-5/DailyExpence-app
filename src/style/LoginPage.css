@@ -1,0 +1,66 @@
+/* styles/Login.css */
+
+form {
+  max-width: 400px;
+  margin: 30px auto;
+  background-color: #f8f9fa;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+form div {
+  margin-bottom: 15px;
+}
+
+label {
+  display: block;
+  margin-bottom: 6px;
+  font-weight: bold;
+}
+
+input[type="email"],
+input[type="password"] {
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.button-container {
+  text-align: center;
+  margin-top: 20px;
+}
+
+button {
+  margin-right: 10px;
+  padding: 10px 20px;
+  background-color: #007bff;
+  border: none;
+  color: white;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+h1,
+h3 {
+  text-align: center;
+}
+
+.forgot-password {
+  display: block;
+  margin-top: 10px;
+  text-align: center;
+  color: #007bff;
+  cursor: pointer;
+}
+
+.forgot-password:hover {
+  text-decoration: underline;
+}

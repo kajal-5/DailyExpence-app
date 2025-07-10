@@ -1,0 +1,38 @@
+/* styles/MainHeader.css */
+
+.Nav-bar {
+  background-color: #007bff !important;
+  padding: 12px 0;
+}
+
+.nav-link-custom {
+  color: white;
+  text-decoration: none;
+  margin-right: 20px;
+  font-weight: 500;
+  font-size: 20px;
+}
+
+.nav-link-custom:hover {
+  text-decoration: underline;
+}
+
+.active {
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.Nav-bar button {
+  margin-left: 15px;
+  background-color: white;
+  color: #007bff;
+  border: none;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.Nav-bar button:hover {
+  background-color: #e2e6ea;
+}
