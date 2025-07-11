@@ -102,7 +102,7 @@ const LoginPage=()=>{
                 </div>
 
                 <div className="button-container">
-                    <button>{isLogin ? "Login" : "Create Account"}</button><br></br><br></br>
+                    <button>{isLogin ? "Login" : "Create Account"}</button><br></br>
                     <button type="button" onClick={switchAuthModeHandler}>{isLogin ? "Create new account" : "Login "}</button>
                 </div>
                 

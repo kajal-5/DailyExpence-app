@@ -5,7 +5,7 @@ const ProjectDetails =()=>{
     console.log(params.productId);
     return (
     <>
-        <h1>Project Details</h1>
+        <h1>Product Details</h1>
         <section>This is beautiful cotton shirt.</section>
         <h2>This is your product Id {params.productId}</h2>
     </>

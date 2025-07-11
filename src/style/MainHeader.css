@@ -2,13 +2,13 @@
 
 .Nav-bar {
   background-color: #007bff !important;
-  padding: 12px 0;
+  padding: 2px 0;
 }
 
 .nav-link-custom {
   color: white;
   text-decoration: none;
-  margin-right: 20px;
+  margin: 12px;
   font-weight: 500;
   font-size: 20px;
 }

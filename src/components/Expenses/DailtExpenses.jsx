@@ -2,10 +2,11 @@ import { useEffect, useState } from "react";
 
 const API_URL = "https://crudcrud.com/api/fc426fb8533a45a9bb058b7d196a0636/profileData";
 
-const ProfilePage = () => {
+const dailyExpenses = () => {
   const [profiles, setProfiles] = useState([]);
-  const [name, setName] = useState("");
-  const [photoUrl, setPhotoUrl] = useState("");
+  const [Money, setMoney] = useState("");
+  const [Discription, setDiscription] = useState("");
+  const [category, setcategory] = useState("");
   const [editId, setEditId] = useState(null);
 
   useEffect(() => {
@@ -25,9 +26,9 @@ const ProfilePage = () => {
   // save and update
   const handleSubmit = async (e) => {
     e.preventDefault();
-    if (!name.trim() || !photoUrl.trim()) return;
+    if (!Money.trim() || !Discription.trim() || !category.trim()) return;
 
-    const payload = { name, photoUrl };
+    const payload = { Money, Discription, category };
 
     try {
       if (editId) {
@@ -42,7 +43,8 @@ const ProfilePage = () => {
         setProfiles((prev) =>
           prev.map((item) => (item._id === editId ? { ...item, ...payload } : item))
         );
-      } else {
+        } 
+        else {
         // Create new
         const res = await fetch(API_URL, {
           method: "POST",
@@ -71,14 +73,16 @@ const ProfilePage = () => {
 
   // EDIT
   const handleEdit = (profile) => {
-    setName(profile.name);
-    setPhotoUrl(profile.photoUrl);
+    setMoney(profile.Money);
+    setDiscription(profile.Discription);
+    setcategory(profile.category);
     setEditId(profile._id);
   };
 
   const resetForm = () => {
-    setName("");
-    setPhotoUrl("");
+    setMoney("");
+    setDiscription("");
+    setcategory("");
     setEditId(null);
   };
 
@@ -89,21 +93,28 @@ const ProfilePage = () => {
 
       <form onSubmit={handleSubmit}>
         <div className="text-container">
-          <label htmlFor="name">Your Name</label>
+          <label htmlFor="Money">Your Money</label>
           <input
             type="text"
-            id="name"
-            value={name}
+            id="Money"
+            value={Money}
             required
-            onChange={(e) => setName(e.target.value)}
+            onChange={(e) => setMoney(e.target.value)}
           />
           <label htmlFor="url">Photo URL</label>
           <input
             type="text"
-            id="url"
-            value={photoUrl}
+            id="discription"
+            value={Discription}
             required
-            onChange={(e) => setPhotoUrl(e.target.value)}
+            onChange={(e) => setDiscription(e.target.value)}
+          />
+          <input
+            type="text"
+            id="category"
+            value={category}
+            required
+            onChange={(e) => setcategory(e.target.value)}
           />
         </div>
 
@@ -118,7 +129,7 @@ const ProfilePage = () => {
       <ul>
         {profiles.map((profile) => (
           <li key={profile._id}>
-            <strong>{profile.name}</strong> - {profile.photoUrl}
+            <strong>{profile.Money}</strong> - {profile.Discription} - {profile.category}<hr></hr>
             <button onClick={() => handleEdit(profile)}>Edit</button>
             <button onClick={() => handleDelete(profile._id)}>Delete</button>
           </li>
@@ -128,4 +139,4 @@ const ProfilePage = () => {
   );
 };
 
-export default ProfilePage;
+export default dailyExpenses;

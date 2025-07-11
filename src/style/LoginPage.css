@@ -19,23 +19,32 @@ label {
   font-weight: bold;
 }
 
-input[type="email"],
+/* input[type="email"],
 input[type="password"] {
   width: 100%;
   padding: 10px;
   font-size: 16px;
   border: 1px solid #ccc;
   border-radius: 5px;
-}
+} */
 
+
+input{
+  width: 100%;
+  padding: 10px;
+  font-size: 16px;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
 .button-container {
   text-align: center;
   margin-top: 20px;
 }
 
 button {
-  margin-right: 10px;
-  padding: 10px 20px;
+  text-align: center;
+  margin: 10px;
+  padding: 4px 15px;
   background-color: #007bff;
   border: none;
   color: white;
