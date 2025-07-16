@@ -5,7 +5,7 @@ h1,h2,h3,li{
   background-color: rgb(181, 217, 255);
   background-size: cover;     
   background-position: center;
-  padding: 10px;             /* Add space inside h1 so the background is visible */
+  padding: 7px;             /* Add space inside h1 so the background is visible */
   /* display: inline-block;  */
 }
 
