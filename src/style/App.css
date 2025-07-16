@@ -1,3 +1,14 @@
+body{
+  background-image: url('Expenses.png');
+}
+h1,h2,h3,li{
+  background-color: rgb(181, 217, 255);
+  background-size: cover;     
+  background-position: center;
+  padding: 10px;             /* Add space inside h1 so the background is visible */
+  /* display: inline-block;  */
+}
+
 
 .Nav-bar{
     background-color: rgb(117, 209, 249) !important;

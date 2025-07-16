@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 
-const API_URL = "https://crudcrud.com/api/fc426fb8533a45a9bb058b7d196a0636/profileData";
+const API_URL = "https://crudcrud.com/api/f3d95d1e75184e008daa0fdcbec0ff2e/ExpensesData";
 
-const dailyExpenses = () => {
+const DailyExpenses = () => {
   const [profiles, setProfiles] = useState([]);
   const [Money, setMoney] = useState("");
   const [Discription, setDiscription] = useState("");
@@ -95,13 +95,14 @@ const dailyExpenses = () => {
         <div className="text-container">
           <label htmlFor="Money">Your Money</label>
           <input
-            type="text"
+            type="number"
             id="Money"
+            min="1"
             value={Money}
             required
             onChange={(e) => setMoney(e.target.value)}
           />
-          <label htmlFor="url">Photo URL</label>
+          <label htmlFor="Discription">Discription</label>
           <input
             type="text"
             id="discription"
@@ -109,6 +110,7 @@ const dailyExpenses = () => {
             required
             onChange={(e) => setDiscription(e.target.value)}
           />
+          <label htmlFor="Category">Category</label>
           <input
             type="text"
             id="category"
@@ -129,9 +131,10 @@ const dailyExpenses = () => {
       <ul>
         {profiles.map((profile) => (
           <li key={profile._id}>
-            <strong>{profile.Money}</strong> - {profile.Discription} - {profile.category}<hr></hr>
+            <strong>{profile.Money}</strong> - {profile.Discription} - {profile.category}
             <button onClick={() => handleEdit(profile)}>Edit</button>
             <button onClick={() => handleDelete(profile._id)}>Delete</button>
+            <hr></hr>
           </li>
         ))}
       </ul>
@@ -139,4 +142,4 @@ const dailyExpenses = () => {
   );
 };
 
-export default dailyExpenses;
+export default DailyExpenses;

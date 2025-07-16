@@ -6,7 +6,7 @@ import LoginDetails from './components/login/LoginDetails';
 import LoginPage from './components/login/LoginPage';
 import ProfilePage from './components/login/ProfilePage';
 import ForgotPasswordPage from './components/login/ForgotPasswordPage';
-import dailyExpenses from './components/Expenses/DailtExpenses';
+import DailyExpenses from './components/Expenses/DailtExpenses';
 import AuthContext from './store/AuthContext';
 import { useContext } from 'react';
 import'./style/App.css';
@@ -21,14 +21,13 @@ function App() {
       <MainHeader/>
           <Routes> 
             <Route path="/" element={<Navigate to="/login" replace/>} exact></Route>
-            {/* <Route path="/welcome" element={<Welcome/>}></Route> */}
             <Route path="/products" element={<Products/>}></Route>
             <Route path="/products/:productId" element={<ProjectDetails/>}></Route>
             <Route path ="/login/:student" element={<LoginDetails/>}/>
             <Route path="/login" element ={<LoginPage/>} />
             <Route path="/profilepage" element={Authcnt.isLogin ? <ProfilePage /> : <Navigate to="/login" replace />}/>
             <Route path="/forgot-password" element={<ForgotPasswordPage />} />
-            <Route path="/daily-expenses" element ={<dailyExpenses/>}/>
+            <Route path="/daily-expenses" element ={Authcnt.isLogin ? <DailyExpenses/> : <Navigate to="/login" replace />}/>
           </Routes>
 
     </div>
